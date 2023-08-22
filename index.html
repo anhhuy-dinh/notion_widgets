@@ -1,137 +1,87 @@
-<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue" rel="stylesheet">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>greeting</title>
+        <style>
+            body{
+                background-color: #fff;
+                line-height: 1.6;
+            }
+            
+            h1 {
+                margin-top: 0;
+            }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>greeting2</title>
+            /* CSS */
 
-    <style>
+            .full-table {
+                display: table;
+                height: 100%;
+                width: 100%;
+                text-align: center;
+            }
 
-        /*CSS RESETS*/
+            .table-cell {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
 
-body{
-    background-color: #fff;
-    line-height: 1.6;
+            .card {
+                padding: 10px 25px 10px 25px;
+                border-radius: 10px;
+                background: rgb(12,14,176);
+                background: linear-gradient(51deg, rgba(12,14,176,1) 0%, rgba(63,47,222,1) 20%, rgba(127,26,209,1) 50%, rgba(241,6,240,1) 80%, rgba(252,120,252,0.9977240896358543) 100%);
+                width: 85vw;
+                color: #fff;
+                display: inline-block;
+                box-shadow: 3px 3px 3px 1px #4e434f;
+                text-align: center;
+            }
 
-}
+            .card:hover {
+                margin-top: 2px;
+                box-shadow: none;
+            }
 
-h1 {
-    margin-top: 0;
-}
+            .greet {
+                display:inline;
+                font-family: 'Dancing Script', cursive;
+                font-size: 2rem;
+                padding-right: 30px;
+                text-align: center;
+            }
+        </style>
+    </head>
 
+    <body>
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+        <div class="full-table">
+            <div class="full-table">
+                <div class="card">
+                    <div class="greet" id="greet"></div>
+                </div>
+            </div>
+        </div>
 
-/*CSS START*/
-
-.full-table {
-    display: table;
-    height: 100%;
-    width: 100%;
-}
-
-.table-cell {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-
-.card {
-    padding: 10px 25px 10px 25px;
-    border-radius: 10px;
-    background: rgb(84,85,165);
-background: linear-gradient(51deg, rgba(84,85,165,1) 0%, rgba(63,47,222,1) 20%, rgba(170,109,219,1) 50%, rgba(255,47,254,1) 80%, rgba(255,143,255,0.9977240896358543) 100%);
-    width: 85vw;
-    color: #fff;
-    display: inline-block;
-    box-shadow: 2px 2px 1px 0px #330835;
-}
-
-.card:hover {
-    margin-top: 2px;
-    box-shadow: none;
-}
-
-.greet{
-    
-    display:inline;
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-     padding-right: 30px;
-}
-
-    </style>
-</head>
-<body>
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
-
-<div class="full-table">
-  <div class="table-cell">
-    
-    <div class="card">
-      <div class="date" id="date"></div>
-      <div class="greet" id="greet"></div>
-    </div>
-    
-  </div>
-</div>
-
-<script>
-    function date() {
-var today = new Date();
-document.getElementById('date').innerHTML = today.toDateString();
-}
-
-
-function clock() {
-var today = new Date();
-var hour = zeros(twelveHour(today.getHours()));
-var minutes = zeros(today.getMinutes());
-var seconds = zeros(today.getSeconds());
-if(today.getHours() >=12){
-    seconds+=" pm"
-}
-else{
-    seconds+=" am"
-}
-hrs = today.getHours();
-if (hrs < 12)
-        greet = 'Good Morning ';
-    else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon ';
-    else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening ';
-document.getElementById('greet').innerHTML = greet;
-}
-
-function twelveHour(hour) {
-if (hour > 12) {
-    return hour -= 12 
-} else if (hour === 0) {
-    return hour = 12;
-} else {
-    return hour
-}
-}
-    
-// adds zero infront of single digit number
-function zeros(num) {
-if (num < 10) {
-    num = '0' + num
-};
-return num;
-}
-
-function dateTime() {
-date();
-clock();
-setTimeout(dateTime, 500);
-}
-
-dateTime()
-// END
-</script>
-
-</body>
+        <script>
+            // function clock() {
+            //     var today = new Date();
+            // }
+            var today = new Date();
+            hours = today.getHours();
+            if (hours < 12)
+                greet = "Good Morning";
+            else
+                if (hours >= 12 && hours <= 17)
+                    greet = "Good Afternoon";
+                else
+                    if (hours > 17 && hours <= 24)
+                        greet = "Good Evening";
+            document.getElementById('greet').innerHTML = greet;
+        </script>
+    </body>
 </html>
