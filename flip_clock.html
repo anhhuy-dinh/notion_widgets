@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-        <title>Digital Clock</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="flip_clock.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<head>
+		<link rel="stylesheet" href="flip_clock.css">
+		<link rel="stylesheet" href="style.css">
 
-		<script src="flip_clock.js"></script>	
-    </head>
-    <body>
-        <div class="hero">
-            <div class="container">
-                <div class="background">
-                    <div class="clock" style="margin:2em;"></div>
-                </div>
-            </div>
-        </div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-        <script type="text/javascript">
+		<script src="flip_clock.js"></script>		
+	</head>
+	<body>
+		<div class="container">
+			<div class="sub-container">
+				<div class="clock" style="margin:2em;"></div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
 			var clock;
 			
 			$(document).ready(function() {
@@ -28,5 +25,6 @@
 				});
 			});
 		</script>
-    </body>
+		
+	</body>
 </html>
